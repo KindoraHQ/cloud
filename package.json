@@ -1,10 +1,22 @@
 {
+  "name": "kindora-testing",
+  "version": "1.0.0",
   "scripts": {
     "test": "hardhat test",
     "test:gas": "REPORT_GAS=true hardhat test",
     "coverage": "hardhat coverage",
     "test:integration": "hardhat test test/Kindora.integration.test.js",
     "test:edge": "hardhat test test/Kindora.edge.test.js"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@nomicfoundation/hardhat-chai-matchers": "^2.0.0",
+    "@nomicfoundation/hardhat-ethers": "^3.0.0",
+    "@openzeppelin/contracts": "^5.0.0",
+    "chai": "^4.3.10",
+    "ethers": "^6.9.0",
+    "hardhat": "^2.19.0",
+    "hardhat-gas-reporter": "^1.0.9"
   },
   "nyc": {
     "check-coverage": true,
