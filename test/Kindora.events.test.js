@@ -42,7 +42,7 @@ describe("TEST SUITE 13: Event Emission Tests", function () {
     const Kindora = await ethers.getContractFactory("Kindora");
     const k2 = await Kindora.deploy(await router.getAddress());
     
-    await expect(k2.deploymentTransaction())
+    await expect(k2.deployTransaction)
       .to.emit(k2, "Transfer")
       .withArgs(ethers.ZeroAddress, owner.address, TOTAL_SUPPLY);
   });

@@ -452,7 +452,7 @@ describe("Kindora Token - Comprehensive Test Suite Part 2", function () {
         it("Should measure gas for deployment", async function () {
             const Kindora = await ethers.getContractFactory("Kindora");
             const k2 = await Kindora.deploy(await router.getAddress());
-            const receipt = await k2.deploymentTransaction().wait();
+            const receipt = await k2.deployTransaction.wait();
             
             console.log(`Deployment gas: ${receipt.gasUsed.toString()}`);
             expect(receipt.gasUsed).to.be.lt(5000000n);
@@ -547,7 +547,7 @@ describe("Kindora Token - Comprehensive Test Suite Part 2", function () {
             const Kindora = await ethers.getContractFactory("Kindora");
             const k2 = await Kindora.deploy(await router.getAddress());
             
-            await expect(k2.deploymentTransaction())
+            await expect(k2.deployTransaction)
                 .to.emit(k2, "Transfer")
                 .withArgs(ethers.ZeroAddress, owner.address, TOTAL_SUPPLY);
         });

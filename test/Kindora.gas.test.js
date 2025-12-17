@@ -40,7 +40,7 @@ describe("TEST SUITE 12: Gas Usage Tests", function () {
   it("Should measure gas used for deployment", async function () {
     const Kindora = await ethers.getContractFactory("Kindora");
     const k2 = await Kindora.deploy(await router.getAddress());
-    const receipt = await k2.deploymentTransaction().wait();
+    const receipt = await k2.deployTransaction.wait();
     
     console.log("Gas used for deployment:", receipt.gasUsed.toString());
     expect(receipt.gasUsed).to.be.lt(5000000n);
