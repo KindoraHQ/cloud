@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "test": "hardhat test",
+    "test:gas": "REPORT_GAS=true hardhat test",
+    "coverage": "hardhat coverage",
+    "test:integration": "hardhat test test/Kindora.integration.test.js",
+    "test:edge": "hardhat test test/Kindora.edge.test.js"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "per-file": true,
+    "lines": 95,
+    "statements": 95,
+    "functions": 100,
+    "branches": 90,
+    "reporter": ["html", "text"]
+  }
+}
