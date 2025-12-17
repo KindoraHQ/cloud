@@ -31,3 +31,7 @@ yarn-error.log*
 dist/
 build/
 out/
+
+# solcjs artifacts
+*.abi
+*.bin
